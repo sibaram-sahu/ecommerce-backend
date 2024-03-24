@@ -1,20 +1,34 @@
 {
-  "name": "be",
+  "name": "flipkart",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Full Stack Flipkart Ecommerce",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "render-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Jigar Sable",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.1",
-    "mongoose": "^8.2.2"
+    "@sendgrid/mail": "^7.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "cloudinary": "^1.28.1",
+    "concurrently": "^7.6.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.7",
+    "nodemailer": "^6.7.2",
+    "paytmchecksum": "^1.5.0",
+    "stripe": "^8.200.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
