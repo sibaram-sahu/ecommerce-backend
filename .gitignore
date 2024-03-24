@@ -145,3 +145,4 @@ dist
 node_modules
 
 config/config.env
+node_modules
